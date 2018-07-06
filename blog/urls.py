@@ -13,5 +13,6 @@ urlpatterns = [
 #desc of above urlpatterns==>
 #year requirs 4 digit ,simlry month and day
 #posts can be composed with words and hyphens
+    url(r'^(?P<post_id>\d+)/share/$', views.post_share, name='post_share'),
 
 ]
