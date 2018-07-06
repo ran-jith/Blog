@@ -10,6 +10,6 @@ urlpatterns = [
         name='post_detail'),
 #desc of above urlpatterns==>
 #year requirs 4 digit ,simlry month and day
-#posts can be composed with words and hyphens        
+#posts can be composed with words and hyphens
 
 ]
