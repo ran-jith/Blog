@@ -21,4 +21,6 @@ urlpatterns = [
 
     url(r'^feed/$', LatestPostFeed(), name='post_feed'),
 
+    url(r'^search/$', views.post_search, name='post_search'),
+
 ]

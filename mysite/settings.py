@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'taggit',
     'django.contrib.sites',
     'django.contrib.sitemaps',
+    'haystack',
 ]
 
 MIDDLEWARE = [
@@ -131,5 +132,14 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
+
+#haystack connection settings
+HAYSTACK_CONNECTIONS = {
+    'default':{
+        'ENGINE': 'haystack.backends.solr_backend.SolrEngine',
+        'URL': 'http://127.0.0.1:8983/solr/blog'
+    },
+}
+
 
 STATIC_URL = '/static/'
