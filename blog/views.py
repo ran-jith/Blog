@@ -1,9 +1,9 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Post
+from .models import Post,Comment
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 from django.views.generic import ListView
-from .forms import EmailPostForm
+from .forms import EmailPostForm, CommentForm
 from django.core.mail import send_mail
 
 def post_list(request):
@@ -31,9 +31,30 @@ def post_detail(request, year, month, day, post):
                                     publish__year=year,
                                     publish__month=month,
                                     publish__day=day)
+
+    #list of active comments for this post
+    comments = post.comments.filter(active=True) #retrive all comments for ths post
+
+    if request.method == 'POST':
+        #a comment was posted
+        comment_form = CommentForm(data=request.POST)
+        if comment_form.is_valid():
+            #create comment object but dont save to db yet
+            new_comment = comment_form.save(commit=False)
+            #assign the current post to comment
+            new_comment.post = post
+            #save the comment to db
+            new_comment.save()
+    else:
+        comment_form = CommentForm()
+
+
+
     return render(request,
                   'blog/post/detail.html',
-                  {'post':post})
+                  {'post':post,
+                   'comments':comments,
+                   'comment_form':comment_form})
 
 
 #class based view below
