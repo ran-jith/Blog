@@ -1,5 +1,6 @@
 from django.conf.urls import url
 from .import views
+from .feeds import LatestPostFeed
 
 urlpatterns = [
     #post views
@@ -18,5 +19,6 @@ urlpatterns = [
     #for tags
     url(r'^tag/(?P<tag_slug>[-\w]+)/$', views.post_list, name='post_list_by_tag'), #this will call view with a slug parameter
 
+    url(r'^feed/$', LatestPostFeed(), name='post_feed'),
 
 ]
