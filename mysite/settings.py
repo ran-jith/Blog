@@ -14,8 +14,9 @@ import os
 
 
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'ranjithakalurkk@gmail.com'
-EMAIL_HOST_PASSWORD = 'ranjith321!'
+#change here with your datas
+EMAIL_HOST_USER = 'yourmail.com'
+EMAIL_HOST_PASSWORD = 'yourpass'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
