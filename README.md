@@ -13,7 +13,7 @@ Anyone can Share your blog to others via email(here gmail)
 Anyone can comment to your blog                                                                                                    
 And there are lot of small features..                                                                                                                                                                               
 
-# edits needed
+# Edits needed
 Edit settiings.py in mysite directory and replace "yourmail.com" and "yourpass" with your gmail id and your gmail password respectively
 
 # For help
