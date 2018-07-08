@@ -8,7 +8,7 @@ Markdown==>downloaded from pip
 haystack==>downloaded from pip
 
 # features
-Add and edit your blogs through django admin
+Add and edit your blogs through django admin \n
 Anyone can Share your blog to others via email(here gmail)
 Anyone can comment to your blog
 And there are lot of small features available ..
